@@ -1,0 +1,15 @@
+Use a coleção de arquivos (escolher uma das pastas) disponível em: http://mlg.ucd.ie/files/datasets/bbc-fulltext.zip
+
+Elabore 6 exemplos de consulta.
+
+Rode estas consultas considerando:
+
+- Primeira rodada: sem retirar stopword e sem "stemming"
+
+- Segunda rodada: retirando stopwords e sem "stemming"
+
+- Terceira rodada: retirando stopwords e  com "stemming"
+
+Para cada rodada salve os resultados da consulta e faça comentários.
+
+No final compare se existem diferenças entre as consultas.

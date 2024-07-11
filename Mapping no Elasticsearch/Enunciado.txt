@@ -1,0 +1,7 @@
+Criar uma base de dados no Elasticsearch.
+
+Deverá ser usado Mapping sendo criadas para um index pelo menos 5 propriedades dos documentos a serem armazenados. Uma das propriedades deverá necessariamente ser um texto ("type": "text")
+
+Inserir pelo menos 20 documentos.
+
+Formular 5 consultas sobre os texto e atributos sendo que pelo menos 2 devem ser sobre o texto.

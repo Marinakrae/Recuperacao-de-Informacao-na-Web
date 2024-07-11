@@ -1,0 +1,304 @@
+--Criação dos mappings dos campos dos documentos:
+
+PUT /teste2-index
+{
+
+  "mappings": {
+    "properties": {
+      "titulo_artigo": {
+        "type": "text"
+      },
+      "area": {
+        "type": "keyword"
+      },
+      "id": {
+        "type": "integer"
+      },
+      "data_publicacao": {
+        "type": "date"
+      },
+      "publico": {
+        "type": "boolean"
+      }
+    }
+  }
+}
+
+--Inserção dos documentos
+
+PUT teste2-index/_doc/1
+  {
+    "titulo_artigo": "Introdução à Inteligência Artificial",
+    "area": "Tecnologia",
+    "id": 1,
+    "data_publicacao": "2023-09-01T08:00:00",
+    "publico": true
+  },
+
+PUT teste2-index/_doc/2
+  {
+    "titulo_artigo": "Receitas de Culinária",
+    "area": "Alimentação",
+    "id": 2,
+    "data_publicacao": "2023-08-15T14:30:00",
+    "publico": true
+  }
+
+PUT teste2-index/_doc/3
+  {
+    "titulo_artigo": "Energias Renováveis",
+    "area": "Meio Ambiente",
+    "id": 3,
+    "data_publicacao": "2023-09-10T11:45:00",
+    "publico": true
+  }
+
+PUT teste2-index/_doc/4
+  {
+    "titulo_artigo": "Economia Global",
+    "area": "Negócios",
+    "id": 4,
+    "data_publicacao": "2023-08-20T09:15:00",
+    "publico": true
+  }
+
+PUT teste2-index/_doc/5
+  {
+    "titulo_artigo": "Dicas de Viagem",
+    "area": "Turismo",
+    "id": 5,
+    "data_publicacao": "2023-09-05T16:20:00",
+    "publico": false
+  }
+
+PUT teste2-index/_doc/6
+  {
+    "titulo_artigo": "Ciência do Espaço",
+    "area": "Ciência",
+    "id": 6,
+    "data_publicacao": "2023-08-25T13:10:00",
+    "publico": true
+  }
+  
+PUT teste2-index/_doc/7
+{
+  "titulo_artigo": "História Antiga",
+  "area": "História",
+  "id": 7,
+  "data_publicacao": "2023-09-08T10:00:00",
+  "publico": true
+}
+
+PUT teste2-index/_doc/8
+{
+  "titulo_artigo": "Tecnologia de Comunicação",
+  "area": "Tecnologia",
+  "id": 8,
+  "data_publicacao": "2023-08-12T17:30:00",
+  "publico": false
+}
+
+PUT teste2-index/_doc/9
+{
+  "titulo_artigo": "Saúde e Bem-Estar",
+  "area": "Saúde",
+  "id": 9,
+  "data_publicacao": "2023-09-14T14:50:00",
+  "publico": true
+}
+
+PUT teste2-index/_doc/10
+{
+  "titulo_artigo": "Arte Contemporânea",
+  "area": "Arte",
+  "id": 10,
+  "data_publicacao": "2023-08-05T11:00:00",
+  "publico": true
+}
+
+PUT teste2-index/_doc/11
+{
+  "titulo_artigo": "Política Global",
+  "area": "Política",
+  "id": 11,
+  "data_publicacao": "2023-09-17T09:40:00",
+  "publico": false
+}
+
+PUT teste2-index/_doc/12
+{
+  "titulo_artigo": "Tendências de Moda",
+  "area": "Moda",
+  "id": 12,
+  "data_publicacao": "2023-08-10T15:25:00",
+  "publico": true
+}
+
+PUT teste2-index/_doc/13
+{
+  "titulo_artigo": "Exploração Marinha",
+  "area": "Meio Ambiente",
+  "id": 13,
+  "data_publicacao": "2023-09-19T08:15:00",
+  "publico": true
+}
+
+PUT teste2-index/_doc/14
+{
+  "titulo_artigo": "Educação Online",
+  "area": "Educação",
+  "id": 14,
+  "data_publicacao": "2023-08-22T12:40:00",
+  "publico": true
+}
+
+PUT teste2-index/_doc/15
+{
+  "titulo_artigo": "Cinema Clássico",
+  "area": "Cinema",
+  "id": 15,
+  "data_publicacao": "2023-09-12T16:05:00",
+  "publico": true
+}
+
+PUT teste2-index/_doc/16
+{
+  "titulo_artigo": "Viagens Espaciais",
+  "area": "Ciência",
+  "id": 16,
+  "data_publicacao": "2023-08-28T10:20:00",
+  "publico": false
+}
+
+PUT teste2-index/_doc/17
+{
+  "titulo_artigo": "Gastronomia Internacional",
+  "area": "Alimentação",
+  "id": 17,
+  "data_publicacao": "2023-09-15T14:00:00",
+  "publico": true
+}
+
+PUT teste2-index/_doc/18
+{
+  "titulo_artigo": "Inovações Tecnológicas",
+  "area": "Tecnologia",
+  "id": 18,
+  "data_publicacao": "2023-08-18T11:55:00",
+  "publico": true
+}
+
+PUT teste2-index/_doc/19
+{
+  "titulo_artigo": "Música Clássica",
+  "area": "Música",
+  "id": 19,
+  "data_publicacao": "2023-09-02T09:30:00",
+  "publico": false
+}
+
+PUT teste2-index/_doc/20
+{
+  "titulo_artigo": "Poluição Ambiental",
+  "area": "Meio Ambiente",
+  "id": 20,
+  "data_publicacao": "2023-08-08T14:45:00",
+  "publico": true
+}
+
+
+--Retornar todos os documentos
+
+GET teste2-index/_search
+{
+"size":20,
+"query":{
+"match_all":{}
+}
+}
+
+--Consultas
+
+Consulta: Encontre todos os artigos cujos títulos contenham a palavra "Inteligência Artificial".
+
+GET teste2-index/_search
+{
+  "query": {
+    "match": {
+      "titulo_artigo": "Inteligência Artificial"
+    }
+  }
+}
+
+Consulta: Recupere todos os artigos relacionados à área "Tecnologia".
+
+GET teste2-index/_search
+{
+  "query": {
+    "match": {
+      "area": "Tecnologia"
+    }
+  }
+}
+
+Consulta: Encontre artigos publicados após 1º de setembro de 2023.
+
+GET teste2-index/_search
+{
+  "query": {
+    "range": {
+      "data_publicacao": {
+        "gte": "2023-09-01T00:00:00"
+      }
+    }
+  }
+}
+
+Consulta: Obtenha todos os artigos que são marcados como públicos.
+
+GET teste2-index/_search
+{
+  "query": {
+    "match": {
+      "publico": true
+    }
+  }
+}
+
+Consulta: Encontre artigos cujo título contenha a palavra "Inteligência" e que pertençam à área "Tecnologia".
+
+GET teste2-index/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "titulo_artigo": "Inteligência"
+          }
+        },
+        {
+          "match": {
+            "area": "Tecnologia"
+          }
+        }
+      ]
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
